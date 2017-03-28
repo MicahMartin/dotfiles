@@ -1,0 +1,35 @@
+general {
+	output_format="i3bar"
+	colors = true
+	interval = 5
+	color_good = "#1ec503"
+	color_degraded = "#1ec503"
+	color_bad = "#e89393"
+}
+
+order += "load"
+order += "disk /"
+order += "run_watch DHCP"
+order += "ethernet eth0"
+order += "tztime local"
+
+wireless eth0 {
+	"format_up" = "%ip"
+	"format_down" = "DOWN"
+}
+
+run_watch DHCP {
+	pidfile = "/var/run/dhclient*.pid"
+} 
+
+tztime local {
+	format = "%Y-%m-%d %H:%M:%S"
+}
+
+load {
+	format = "Load %5min"
+}
+
+disk "/" { 
+	format = "%free"
+}
