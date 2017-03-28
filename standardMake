@@ -5,9 +5,9 @@ TARGET := bin/sandbox
  
 SRCEXT := c
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
-OBJECTS := $(patsubst src/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
+OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 CFLAGS := -g -Wall
-#LIB := -pthread -lmongoclient -L lib -lboost_thread-mt -lboost_filesystem-mt -lboost_system-mt
+#LIB := -L lib
 INC := -I include
 
 $(TARGET): $(OBJECTS)
@@ -15,8 +15,9 @@ $(TARGET): $(OBJECTS)
 	@echo " $(CC) $^ -o $(TARGET)"; $(CC) $^ -o $(TARGET)
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
-	@echo "Making directories "
-	@find $(SRCDIR) -type d | sed -e "s?$(SRCDIR)?$(BUILDDIR)?" | xargs  mkdir -p
+	@find $(SRCDIR) -type d | sed -e "s?$(SRCDIR)?$(BUILDDIR)?" | xargs mkdir -p -v
+#find dirs in src, pipe to sed to replace src with dir, pipe to mkdir
+
 	@echo " $(CC) $(CFLAGS) $(INC) -c -o $@ $<"; $(CC) $(CFLAGS) $(INC) -c -o $@ $<
 
 clean:
