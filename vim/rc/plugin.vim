@@ -9,7 +9,7 @@
 " Airline "
 """""""""""
 set laststatus=2
-let g:airline_theme='term'
+let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemod=':t'
 let g:airline#extensions#tabline#buffer_nr_show=1
@@ -49,8 +49,24 @@ let g:ycm_global_ycm_extra_conf = '/home/kai/Conf/vim/bundle/YouCompleteme/.ycm_
 " expand snippets with ctrlJ
 let g:UltiSnipsExpandTrigger="<c-j>"
 
-" Nerd Tree
+"""""""""""""
+" Nerd Tree "
+"""""""""""""
 let g:NERDTreeShowHidden=1
 let g:NERDTreeStatusline="%f"
 let g:NERDTreeWinPos="right"
 let g:NERDTreeWinSize=30
+
+"""""""""""""
+" Syntastic "
+"""""""""""""
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_c_remove_include_errors = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

@@ -8,11 +8,13 @@ filetype plugin indent on
 syntax on
 
 set backspace=indent,eol,start
+set autochdir 
 set history=100
 set hidden
 set lazyredraw
 set wildmenu
 set wildmode=longest:full,full
+set tags=tags;
 
 " turn off backup stuff because version control
 set nobackup nowb noswapfile
