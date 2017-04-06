@@ -1,0 +1,32 @@
+4a5
+> " This file is modified by Devajit Asem <devasem012@hotmail.com>
+39c40
+< syn keyword javaExternal	native package
+---
+> syn keyword javaExternal	native package main
+45c46
+< syn keyword javaConstant	null
+---
+> syn keyword javaConstant	null String args
+48c49
+< syn keyword javaType		boolean char byte short int long float double Thread System Integer String Double Byte Float Long Boolean Char Short
+---
+> syn keyword javaType		boolean char byte short int long float double
+49a51
+> syn match   javaBraces  display    '[(\)\{\}\[\]\*\&\&&\||\+\=\-\_\.\,\;\:]'
+52c54
+< syn keyword javaExceptions	throw try catch finally
+---
+> syn keyword javaExceptions	throw try catch finally System out print println in 
+55c57
+< syn keyword javaClassDecl	extends implements interface
+---
+> syn keyword javaClassDecl	extends implements interface 
+154c156
+<   syntax include @javaHtml <sfile>:p:h/html.vim
+---
+>   syntax include @javaHtml runtime! syntax/html.vim
+253a256
+> 	JavaHiLink javaBraces       Arithmetics
+303a307
+>   JavaHiLink javaBraces       Arithmetics

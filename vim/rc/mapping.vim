@@ -10,6 +10,10 @@ nmap <leader>f :NERDTreeFind<CR>
 nmap <leader>l :NERDTreeToggle<CR>
 nmap <leader>- :bprevious<CR>
 nmap <leader>= :bnext<CR>
+" vimgrep(ag) word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" vimgrep with args
+nnoremap <C-g> :Ag<SPACE>
 " search for files from top/bottom.
 vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> * :call VisualSelection('b', '')<CR>

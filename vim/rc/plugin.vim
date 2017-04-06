@@ -44,7 +44,8 @@ let g:airline_symbols.linenr = ''
 """"""""""""""""""
 " Ultisnip / YCM "
 """"""""""""""""""
-let g:ycm_global_ycm_extra_conf = '/home/kai/Conf/vim/bundle/YouCompleteme/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/Users/martin/dev/dotfiles/vim/bundle/YouCompleteme/.ycm_extra_conf.py'
+let g:ycm_server_python_interpreter = '/usr/local/opt/python3/bin/python3'
 
 " expand snippets with ctrlJ
 let g:UltiSnipsExpandTrigger="<c-j>"
