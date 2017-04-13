@@ -1,6 +1,6 @@
 " Vim syntax file
-" Language:	JPT (Java Server Pages + Aids)
-" Maintainer:	lol
+" Language:	JPT (Java Server Pages + Pain)
+" Maintainer:	I dare you
 "
 
 " quit when a syntax file was already loaded
@@ -15,24 +15,33 @@ endif
 " Source jsp syntax
 runtime! syntax/jsp.vim
 unlet b:current_syntax
-" Next syntax items are case-sensitive
+" Syntax items are case-sensitive
 syn case match
-syn include @jspJava syntax/java.vim
 
-" adding jpt style comments
+" Adding jpt style comments
 syn region jptComment start=/<!--/ end=/-->/
-" matching jstl expressions in jpt tags
-syn match jstlExp contained containedin=jptTag,htmlTag,javaString,htmlString "\${.*}"
-"syn match jstlSigns contained containedin=javaString,jstlExp "\$|{|}"
-" adding jpt tags
-syn region jptTag start=/.*<[bg:|p:|tbg:]/ keepend end=/>/ end=/\/>/ contains=@jspJava,jstlExp
+" Gotta figure out a better way to recognize jpt tags. any time a new taglib is added this regex would need an update 
+syn region jptTag start=/<[bg:|p:|tbg:]/ keepend end=/>/ end=/\/>/ contains=@jspJava,jstlExp
+" match tag lib and tag name
+syn match jptTagLibDecl contained containedin=jptTag /\v\<@<=\w+\:@=/ nextgroup=jptTagName
+syn match jptTagName /\v[\:]<@=\w+/ contained
+" lookbehind is a painnn
+syn match jptColon /\v:/ containedin=jptTagName
+" Matching jstl expressions in jpt tags. htmlJavaScript just looks good imo
+syn match jstlExp contained containedin=jptTag,htmlTag,javaString,htmlString /\${.\{-}}/ contains=@htmlJavaScript,jstlWordedOperators
+" For some reason lookbehind worked here, not even gonna bother trying to replicate
+syn match xpathExp contained containedin=jptTag,javaString /\v"@<=\$[a-zA-Z]+\/\/.{-}"@=/
+syn keyword jstlWordedOperators contained ne and not empty or eq lt gt le ge
 
-" linking
+" JspJava is included in syntax/jsp.vim from syntax/java.vim
 hi def link jptComment	 htmlComment
-hi def link jptTag jspTag
-hi def link jstlExp javaType
+hi def link jptTag htmlTag
+hi def link jptTagName Label
+hi def link xpathExp SpecialComment
+hi def link jptColon htmlTag
+hi def link jstlWordedOperators Constant
 
-if main_syntax == 'jpt'
+if main_syntax == "jpt"
   unlet main_syntax
 endif
 let b:current_syntax = "jpt"

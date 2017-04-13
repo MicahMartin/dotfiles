@@ -9,7 +9,8 @@
 " Airline "
 """""""""""
 set laststatus=2
-let g:airline_theme='badwolf'
+"let g:airline_theme='distinguished'
+let g:airline_theme='base16color'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemod=':t'
 let g:airline#extensions#tabline#buffer_nr_show=1
