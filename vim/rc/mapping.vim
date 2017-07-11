@@ -10,12 +10,13 @@ nmap <leader>f :NERDTreeFind<CR>
 nmap <leader>l :NERDTreeToggle<CR>
 nmap <leader>- :bprevious<CR>
 nmap <leader>= :bnext<CR>
-" vimgrep(ag) word under cursor in normal
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" dir wide search and replace using easygrep
+nmap <leader>s :Replace<SPACE>
 " vimgrep(ag) current visual selection
-vnoremap <C-g> :vimgrep/\%(\%'<\|\%>'<\%<'>\|\%'>\)FOO/ %
+" This will replace the text in the current register
+vnoremap <C-g> y:Grep <C-R>"<CR>
 " vimgrep with args
-nnoremap <C-g> :Ag<SPACE>
+nnoremap <C-g> :Grep<SPACE>
 " search for files from top/bottom.
 vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> * :call VisualSelection('b', '')<CR>
@@ -43,11 +44,16 @@ nmap <leader>^ :call SynStack()<cr>
 nmap <C-b> :CtrlPBuffer<cr>
 nmap <C-f> :CtrlPMRUFiles<cr>
 " close the current buffer/tab
-map <leader>bd :Bclose<cr>tabclose<cr>gT
+map <leader>bd :bd<CR>
 
 """"""""
 " Misc "
 """"""""
+
+" copy current file path to clipboard
+nnoremap <leader>cf :let @*=expand("%")<CR>
+" for full path
+nnoremap <leader>cF :let @*=expand("%:p")<CR>
 
 " fast saving/closing
 nmap <leader>w :w!<cr>

@@ -7,11 +7,11 @@ func! SynStack()
 endfunc
 
 " grep/ag shortcut
-command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 " Override grep with ag
 if executable('ag')
   " Use ag over grep
-  set grepprg=Ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -i -l --nocolor -g ""'

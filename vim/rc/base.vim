@@ -8,7 +8,8 @@ filetype plugin indent on
 syntax on
 
 set backspace=indent,eol,start
-set autochdir 
+" Similar to set autochdir 
+" autocmd BufEnter * silent! lcd %:p:h
 set history=100
 set hidden
 set lazyredraw
@@ -22,7 +23,7 @@ set nobackup nowb noswapfile
 """"""""""""""""
 " Tabs/Indents "
 """"""""""""""""
-set tabstop=2 softtabstop=0 noexpandtab shiftwidth=2 smarttab
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 
 " autoindent, smart indent, wrap lines
 set ai
@@ -42,5 +43,8 @@ color gruvbox
 
 " ignore compiled files
 set wildignore=*.0,*~,*.pyc
-set wildignore+=.git,node_modules,*.pyc
-let foobar='myval'
+set wildignore+=.git,*/node_modules/*,*.pyc
+
+let g:loaded_matchit=1
+
+
