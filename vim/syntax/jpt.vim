@@ -32,6 +32,7 @@ syn match jstlExp contained containedin=jptTag,htmlTag,javaString,htmlString /\$
 " For some reason lookbehind worked here, not even gonna bother trying to replicate
 syn match xpathExp contained containedin=jptTag,javaString /\v"@<=\$[a-zA-Z]+\/\/.{-}"@=/
 syn keyword jstlWordedOperators contained ne and not empty or eq lt gt le ge
+syn keyword javaTodo contained containedin=jptComment,javaString TODO FIXME XXX
 
 " JspJava is included in syntax/jsp.vim from syntax/java.vim
 hi def link jptComment	 htmlComment
@@ -40,7 +41,7 @@ hi def link jptTagName Label
 hi def link xpathExp SpecialComment
 hi def link jptColon htmlTag
 hi def link jstlWordedOperators Constant
-
+hi def link javaTodo Todo
 if main_syntax == "jpt"
   unlet main_syntax
 endif
