@@ -45,6 +45,9 @@ nmap <C-b> :CtrlPBuffer<cr>
 nmap <C-f> :CtrlPMRUFiles<cr>
 " close the current buffer/tab
 map <leader>bd :bd<CR>
+nmap <leader>n :set invnumber<CR>
+" clear the screen, remove search highlights
+nnoremap <C-l> :nohl<CR><C-l>
 
 """"""""
 " Misc "

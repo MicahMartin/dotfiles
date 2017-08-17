@@ -29,6 +29,7 @@ set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 set ai
 set si
 set wrap
+set hlsearch
 
 """"""""""
 " Colors "
