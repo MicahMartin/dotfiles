@@ -37,6 +37,8 @@ map k gk
 
 " Check what kind of syntax element this is, function defined in extended.vim
 nmap <leader>^ :call SynStack()<cr>
+nmap <leader>j :YcmCompleter GoToDefinition<cr>
+" nmap <leader>J :YcmCompleter GoToInclude<cr>
 
 """"""""""""""""""""""""""
 " File/Buffer Management "

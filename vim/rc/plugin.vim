@@ -47,11 +47,33 @@ let g:airline_symbols.linenr = ''
 """"""""""""""""""
 let g:ycm_global_ycm_extra_conf = '/Users/martin/dev/dotfiles/vim/rc/.ycm_extra_conf.py'
 let g:ycm_server_python_interpreter = '/usr/local/opt/python3/bin/python3'
+""""""""""
+"Pls work"
+""""""""""
+let g:ycm_semantic_triggers =  {
+  \   'c' : ['->', '.'],
+  \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
+  \             're!\[.*\]\s'],
+  \   'ocaml' : ['.', '#'],
+  \   'cpp,objcpp' : ['->', '.', '::'],
+  \   'perl' : ['->'],
+  \   'php' : ['->', '::'],
+  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go,groovy' : ['.'],
+  \   'ruby' : ['.', '::'],
+  \   'lua' : ['.', ':'],
+  \   'erlang' : [':'],
+  \ }
+
 " YCM will autoclose the preview window when we get out of insert mode.
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_confirm_extra_conf = 0
 
 " expand snippets with ctrlJ
 let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsUsePythonVersion = 3
+
+" setting search dir
+"let g:UltiSnipsSnippetDirectories=["UltiSnips, cust-snips"]
 
 """""""""""""
 " Nerd Tree "
@@ -69,14 +91,14 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_check_on_open = 0
-let g:syntastic_c_remove_include_errors = 1
+let g:syntastic_check_on_open = 1
+"let g:syntastic_c_remove_include_errors = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
-
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['javascript'],'passive_filetypes': [] }
+let g:syntastic_javascript_checkers=['eslint']
+nnoremap <C-w>E :SyntasticCheck<CR>
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
 
@@ -100,3 +122,9 @@ let g:EasyGrepPerlStyle=1
 " IndentLine "
 """"""""""""""
 let g:indentLine_enabled = 0
+
+""""""""""""""""
+" NERDcomments "
+""""""""""""""""
+
+let g:NERDDefaultAlign = 'left'
