@@ -47,6 +47,8 @@ let g:airline_symbols.linenr = ''
 """"""""""""""""""
 let g:ycm_global_ycm_extra_conf = '/Users/martin/dev/dotfiles/vim/rc/.ycm_extra_conf.py'
 let g:ycm_server_python_interpreter = '/usr/local/opt/python3/bin/python3'
+let g:ycm_python_binary_path = 'python3'
+let g:ycm_collect_identifiers_from_tags_files = 1
 """"""""""
 "Pls work"
 """"""""""
@@ -98,7 +100,7 @@ let g:syntastic_auto_loc_list = 1
 
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['javascript'],'passive_filetypes': [] }
 let g:syntastic_javascript_checkers=['eslint']
-nnoremap <C-w>E :SyntasticCheck<CR>
+let g:syntastic_java_checkers=[]
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
 

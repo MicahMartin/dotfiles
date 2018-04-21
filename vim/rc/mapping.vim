@@ -35,10 +35,9 @@ map k gk
 """""""""""""""""""
 
 
-" Check what kind of syntax element this is, function defined in extended.vim
-nmap <leader>^ :call SynStack()<cr>
+nmap <leader>g :YcmCompleter GoTo<cr>
+nmap <leader>r :YcmCompleter GoToReferences<cr>
 nmap <leader>j :YcmCompleter GoToDefinition<cr>
-" nmap <leader>J :YcmCompleter GoToInclude<cr>
 
 """"""""""""""""""""""""""
 " File/Buffer Management "
@@ -50,7 +49,8 @@ map <leader>bd :bd<CR>
 nmap <leader>n :set invnumber<CR>
 " clear the screen, remove search highlights
 nnoremap <C-l> :nohl<CR><C-l>
-
+" Syntastic check
+nnoremap <C-w>E :SyntasticCheck<CR>
 """"""""
 " Misc "
 """"""""
@@ -65,3 +65,5 @@ nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
 " fast vimrc reloading
 nmap <leader>v :so ~/.vimrc<cr>
+" Check what kind of syntax element this is, function defined in extended.vim
+nmap <leader>^ :call SynStack()<cr>
