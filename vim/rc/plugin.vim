@@ -85,6 +85,8 @@ let g:NERDTreeStatusline="%f"
 let g:NERDTreeWinPos="right"
 let g:NERDTreeWinSize=30
 
+let g:NERDTreeIgnore = ['\.class$', '\.exe$']
+
 """""""""""""
 " Syntastic "
 """""""""""""
@@ -98,11 +100,13 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['javascript'],'passive_filetypes': [] }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['javascript', 'javascript.jsx'],'passive_filetypes': [] }
 let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_java_checkers=[]
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
+"
+let g:jsx_ext_required = 0
 
 """""""""
 " CtrlP "
@@ -111,8 +115,11 @@ let g:ctrlp_working_path_mode = '0'
 if exists("g:ctrlp_user_command")
   unlet g:ctrlp_user_command
 endif
-let g:ctrlp_custom_ignore = '\v[\/]\node_modules$'
-
+set wildignore+=*.class
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/](node_modules)$',
+  \ 'file': '\v\.(class)$',
+  \ }
 """""""""""""
 " Easy grep "
 """""""""""""
@@ -130,3 +137,8 @@ let g:indentLine_enabled = 0
 """"""""""""""""
 
 let g:NERDDefaultAlign = 'left'
+
+""""""""""""""""
+" Vim-CloseTag "
+""""""""""""""""
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.xml, *.jsp, *.jpt, *.jpp, *.tag, *.js, *.cpp'

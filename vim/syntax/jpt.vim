@@ -28,14 +28,16 @@ syn match jptTagName /\v[\:]<@=\w+/ contained
 " lookbehind is a painnn
 syn match jptColon /\v:/ containedin=jptTagName
 " Matching jstl expressions in jpt tags. htmlJavaScript just looks good imo
-syn match jstlExp contained containedin=jptTag,htmlTag,javaString,htmlString /\${.\{-}}/ contains=@htmlJavaScript,jstlWordedOperators
+syn match jstlExp contained containedin=jptTag,htmlTag,javaString,htmlString /\${.\{-}}/ contains=jstlWordedOperators
 " For some reason lookbehind worked here, not even gonna bother trying to replicate
 syn match xpathExp contained containedin=jptTag,javaString /\v"@<=\$[a-zA-Z]+\/\/.{-}"@=/
 syn keyword jstlWordedOperators contained ne and not empty or eq lt gt le ge
 syn keyword javaTodo contained containedin=jptComment,javaString TODO FIXME XXX
+syn region jstlFunction start=/fn\:\w+(/ keepend end=/)/
 
 " JspJava is included in syntax/jsp.vim from syntax/java.vim
 hi def link jptComment	 htmlComment
+hi def link jstlFunction SpecialComment
 hi def link jptTag htmlTag
 hi def link jptTagName Label
 hi def link xpathExp SpecialComment

@@ -45,7 +45,7 @@ color gruvbox
 
 " ignore compiled files
 set wildignore=*.0,*~,*.pyc
-set wildignore+=.git,*/node_modules/*,*.pyc
+set wildignore+=.git,*/node_modules/*,*.pyc,
 
 let g:loaded_matchit=1
 
