@@ -1,5 +1,4 @@
 " lead with the leader
-
 let mapleader="\<space>"
 let g:mapleader="\<space>"
 
@@ -10,14 +9,7 @@ nmap <leader>f :NERDTreeFind<CR>
 nmap <leader>l :NERDTreeToggle<CR>
 nmap <leader>- :bprevious<CR>
 nmap <leader>= :bnext<CR>
-" dir wide search and replace using easygrep
-nmap <leader>s :Replace<SPACE>
-" vimgrep(ag) current visual selection
-" This will replace the text in the current register
-vnoremap <C-g> y:Grep <C-R>"<CR>
-" vimgrep with args
-nnoremap <C-g> :Grep<SPACE>
-" search for files from top/bottom.
+" search for word under cursor from top/bottom.
 vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> * :call VisualSelection('b', '')<CR>
 " easily jump between splits
@@ -34,11 +26,6 @@ map k gk
 """""""""""""""""""
 " Code Completion "
 """""""""""""""""""
-
-
-nmap <leader>g :YcmCompleter GoTo<cr>
-nmap <leader>r :YcmCompleter GoToReferences<cr>
-nmap <leader>j :YcmCompleter GoToDefinition<cr>
 " open up tagbar
 nmap <leader>t :TagbarToggle<CR>
 " cuz tags are usually more than 1
@@ -54,8 +41,7 @@ map <leader>bd :bd<CR>
 nmap <leader>n :set invnumber<CR>
 " clear the screen, remove search highlights
 nnoremap <C-l> :nohl<CR><C-l>
-" Syntastic check
-" nnoremap <C-w>E :SyntasticCheck<CR>
+
 """"""""
 " Misc "
 """"""""
