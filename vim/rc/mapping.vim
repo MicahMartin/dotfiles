@@ -30,6 +30,7 @@ nmap <C-\> <C-w><C-p>
 map j gj
 map k gk
 
+
 """""""""""""""""""
 " Code Completion "
 """""""""""""""""""
@@ -38,6 +39,10 @@ map k gk
 nmap <leader>g :YcmCompleter GoTo<cr>
 nmap <leader>r :YcmCompleter GoToReferences<cr>
 nmap <leader>j :YcmCompleter GoToDefinition<cr>
+" open up tagbar
+nmap <leader>t :TagbarToggle<CR>
+" cuz tags are usually more than 1
+nnoremap <C-]> g<C-]>
 
 """"""""""""""""""""""""""
 " File/Buffer Management "
@@ -50,7 +55,7 @@ nmap <leader>n :set invnumber<CR>
 " clear the screen, remove search highlights
 nnoremap <C-l> :nohl<CR><C-l>
 " Syntastic check
-nnoremap <C-w>E :SyntasticCheck<CR>
+" nnoremap <C-w>E :SyntasticCheck<CR>
 """"""""
 " Misc "
 """"""""

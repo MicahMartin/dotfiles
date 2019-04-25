@@ -91,22 +91,22 @@ let g:NERDTreeIgnore = ['\.class$', '\.exe$']
 " Syntastic "
 """""""""""""
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_check_on_open = 1
-"let g:syntastic_c_remove_include_errors = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['javascript', 'javascript.jsx'],'passive_filetypes': [] }
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_java_checkers=[]
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_check_on_open = 1
+""let g:syntastic_c_remove_include_errors = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"
+"let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['javascript', 'javascript.jsx'],'passive_filetypes': [] }
+"let g:syntastic_javascript_checkers=['eslint']
+"let g:syntastic_java_checkers=[]
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
 "
-let g:jsx_ext_required = 0
+"let g:jsx_ext_required = 0
 
 """""""""
 " CtrlP "
@@ -120,6 +120,7 @@ let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/](node_modules)$',
   \ 'file': '\v\.(class)$',
   \ }
+let g:ctrlp_extensions = ['tag']
 """""""""""""
 " Easy grep "
 """""""""""""
@@ -141,4 +142,4 @@ let g:NERDDefaultAlign = 'left'
 """"""""""""""""
 " Vim-CloseTag "
 """"""""""""""""
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.xml, *.jsp, *.jpt, *.jpp, *.tag, *.js, *.cpp'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.xml, *.jsp, *.jpt, *.jpp, *.tag, *.js'
