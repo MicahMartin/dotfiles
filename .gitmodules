@@ -34,3 +34,6 @@
 [submodule "vim/bundle/coc-sources"]
 	path = vim/bundle/coc-sources
 	url = https://github.com/neoclide/coc-sources
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround

@@ -9,6 +9,8 @@ nmap <leader>f :NERDTreeFind<CR>
 nmap <leader>l :NERDTreeToggle<CR>
 nmap <leader>- :bprevious<CR>
 nmap <leader>= :bnext<CR>
+
+nmap <leader>= :bnext<CR>
 " search for word under cursor from top/bottom.
 vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> * :call VisualSelection('b', '')<CR>
@@ -30,6 +32,11 @@ map k gk
 nmap <leader>t :TagbarToggle<CR>
 " cuz tags are usually more than 1
 nnoremap <C-]> g<C-]>
+nmap <C-y> gg"*yG
+" Java commenter
+autocmd FileType java source /Users/martin/dev/dotfiles/vim/macros/jcommenter.vim
+autocmd FileType java map <M-c> :call JCommentWriter()<CR>
+
 
 """"""""""""""""""""""""""
 " File/Buffer Management "
