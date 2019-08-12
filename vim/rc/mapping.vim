@@ -36,6 +36,10 @@ nmap <C-y> gg"*yG
 " Java commenter
 autocmd FileType java source /Users/martin/dev/dotfiles/vim/macros/jcommenter.vim
 autocmd FileType java map <M-c> :call JCommentWriter()<CR>
+" better pum control
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 
 
 """"""""""""""""""""""""""

@@ -72,3 +72,7 @@ let g:ctrlp_extensions = ['tag']
 let g:BASH_Ctrl_k = "off"
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsUsePythonVersion = 2
+
+"""""""""""""
+" Deoplete "
+let g:deoplete#enable_at_startup = 1
